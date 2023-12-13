@@ -1,4 +1,4 @@
-
+Below, the terminal commands are provided to run different SinGAN functionalities. For running BLIP and the Text-to-Image models, use the provided corresponding .ipynb files.
 
 ### Install dependencies
 
@@ -37,17 +37,6 @@ To generate random samples of arbitrary sizes, please first train SinGAN model o
 ```
 python random_samples.py --input_name <training_image_file_name> --mode random_samples_arbitrary_sizes --scale_h <horizontal scaling factor> --scale_v <vertical scaling factor>
 ```
-
-###  Harmonization
-
-To harmonize a pasted object into an image. Run the command
-
-```
-python harmonization.py --input_name <training_image_file_name> --ref_name <naively_pasted_reference_image_file_name> --harmonization_start_scale <scale to inject>
-
-```
-
-Please note that different injection scale will produce different harmonization effects. The coarsest injection scale equals 1. 
 
 ###  Paint to Image
 
