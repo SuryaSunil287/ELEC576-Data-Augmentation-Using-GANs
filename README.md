@@ -10,11 +10,9 @@ This code was tested with python 3.6, torch 1.4
 
 Please note: the code currently only supports torch 1.4 or earlier because of the optimization scheme.
 
-For later torch versions, you may try this repository: https://github.com/kligvasser/SinGAN (results won't necessarily be identical to the official implementation).
-
 
 ###  Train
-To train SinGAN model on your own image, put the desired training image under Input/Images, and run
+To train SinGAN model, put the desired training image under Input/Images, and run
 
 ```
 python main_train.py --input_name <input_file_name>
@@ -42,7 +40,7 @@ python random_samples.py --input_name <training_image_file_name> --mode random_s
 
 ###  Harmonization
 
-To harmonize a pasted object into an image (See example in Fig. 13 in [our paper](https://arxiv.org/pdf/1905.01164.pdf)), please first train SinGAN model on the desired background image (as described above), then save the naively pasted reference image and it's binary mask under "Input/Harmonization" (see saved images for an example). Run the command
+To harmonize a pasted object into an image. Run the command
 
 ```
 python harmonization.py --input_name <training_image_file_name> --ref_name <naively_pasted_reference_image_file_name> --harmonization_start_scale <scale to inject>
@@ -53,7 +51,7 @@ Please note that different injection scale will produce different harmonization 
 
 ###  Paint to Image
 
-To transfer a paint into a realistic image (See example in Fig. 11 in [our paper](https://arxiv.org/pdf/1905.01164.pdf)), please first train SinGAN model on the desired image (as described above), then save your paint under "Input/Paint", and run the command
+To transfer a paint into a realistic image, and run the command
 
 ```
 python paint2image.py --input_name <training_image_file_name> --ref_name <paint_image_file_name> --paint_start_scale <scale to inject>
@@ -65,8 +63,3 @@ Advanced option: Specify quantization_flag to be True, to re-train *only* the in
 
 
 
-fake_high_variance folder: random samples starting from n=N for each of the real images 
-
-fake_mid_variance folder: random samples starting from n=N-1 for each of the real images 
-
-For additional details please see section 3.1 in our [paper](https://arxiv.org/pdf/1905.01164.pdf)
